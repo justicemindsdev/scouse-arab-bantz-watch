@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scouse Arab Bantz — Watch</title>
+<meta property="og:title" content="Scouse Arab Bantz">
+<meta property="og:description" content="The Podcast — Watch the trailer and full episode">
+<meta property="og:image" content="https://tvecnfdqakrevzaeifpk.supabase.co/storage/v1/object/public/podcast-media/artwork.png">
+<meta property="og:type" content="video.other">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Helvetica Neue',sans-serif;min-height:100vh}
+.header{text-align:center;padding:30px 20px 15px}
+.header img{width:80px;height:80px;border-radius:50%;border:2px solid #d4af37}
+.header h1{font-size:1.6em;color:#d4af37;margin:10px 0 2px;letter-spacing:1px}
+.header p{color:#666;font-size:0.9em}
+.tabs{display:flex;justify-content:center;gap:0;margin:20px auto;max-width:500px}
+.tab{flex:1;padding:12px;text-align:center;cursor:pointer;
+      background:#111;color:#888;border:1px solid #222;font-size:0.95em;
+      transition:all 0.2s}
+.tab:first-child{border-radius:8px 0 0 8px}
+.tab:last-child{border-radius:0 8px 8px 0}
+.tab.active{background:#1a1a1a;color:#d4af37;border-color:#d4af37}
+.player{max-width:800px;margin:0 auto;padding:0 15px}
+.player video{width:100%;border-radius:8px;background:#000;margin-top:15px}
+.info{text-align:center;padding:10px;color:#555;font-size:0.8em;margin-top:8px}
+.hidden{display:none}
+footer{text-align:center;padding:30px;color:#333;font-size:0.75em}
+footer a{color:#d4af37;text-decoration:none}
+</style>
+
+<style>
+/* Auto mobile-responsive (injected by instant_deploy) */
+@media(max-width:600px){
+  body{font-size:14px!important}
+  h1{font-size:1.6rem!important}
+  h2{font-size:1.3rem!important}
+  img,video,iframe{max-width:100%!important;height:auto!important}
+  pre,code{font-size:.8rem!important;overflow-x:auto!important}
+  table{display:block!important;overflow-x:auto!important}
+  .container,.wrapper,.content{padding:0 1rem!important;max-width:100%!important}
+  button,input,select{font-size:16px!important} /* prevents iOS zoom on focus */
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+<img src="https://tvecnfdqakrevzaeifpk.supabase.co/storage/v1/object/public/podcast-media/artwork.png" alt="Scouse Arab Bantz">
+<h1>SCOUSE ARAB BANTZ</h1>
+<p>The Podcast</p>
+</div>
+
+<div class="tabs">
+<div class="tab active" onclick="show('trailer')">Trailer</div>
+<div class="tab" onclick="show('episode')">Full Episode</div>
+</div>
+
+<div class="player">
+<div id="trailer">
+<video controls playsinline preload="metadata" poster="https://tvecnfdqakrevzaeifpk.supabase.co/storage/v1/object/public/podcast-media/artwork.png">
+<source src="https://tvecnfdqakrevzaeifpk.supabase.co/storage/v1/object/public/podcast-media/trailer.mp4" type="video/mp4">
+</video>
+<div class="info">2 min trailer — theme song + clip highlights</div>
+</div>
+<div id="episode" class="hidden">
+<video controls playsinline preload="metadata" poster="https://tvecnfdqakrevzaeifpk.supabase.co/storage/v1/object/public/podcast-media/artwork.png">
+<source src="https://tvecnfdqakrevzaeifpk.supabase.co/storage/v1/object/public/podcast-media/full_episode.mp4" type="video/mp4">
+</video>
+<div class="info">Full episode — 8.5 minutes</div>
+</div>
+</div>
+
+<footer>
+<a href="https://justicemindsdev.github.io/scouse-arab-bantz/">justicemindsdev.github.io/scouse-arab-bantz</a>
+</footer>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.player > div').forEach(d => d.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  // pause other videos
+  document.querySelectorAll('video').forEach(v => v.pause());
+}
+</script>
+</body>
+</html>
